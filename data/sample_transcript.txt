@@ -1,0 +1,63 @@
+John (CEO): Good morning everyone. Thanks for joining our Q1 planning meeting. I want to review our Q4 performance, discuss the product roadmap, go over hiring plans, and talk about our marketing strategy for the next quarter.
+
+Sarah (Head of Product): Thanks John. Before we dive in, I just want to say that the team has done an incredible job this quarter despite the challenges we faced with the delayed API integration.
+
+Mike (Engineering Lead): Agreed. The team worked really hard. We shipped 3 major features in Q4 - the new dashboard, the notification system, and the user onboarding flow. All three are live in production now.
+
+John (CEO): That's great to hear Mike. What was the final status on the API integration delay?
+
+Mike (Engineering Lead): So the third party API we were depending on had a breaking change in November. It set us back about 3 weeks. We had to refactor a significant portion of the backend. My team put in a lot of extra hours to get us back on track.
+
+Sarah (Head of Product): That delay actually impacted our product launch timeline. We had planned to launch the enterprise tier in December but had to push it to February. That said I think the extra time actually helped us refine the product significantly.
+
+Lisa (Head of Marketing): From a marketing perspective the delay was frustrating because we had already started the campaign. We had to pause all our paid ads and put the influencer partnerships on hold. That cost us about $40,000 in sunk campaign costs.
+
+John (CEO): That's a significant loss Lisa. We need to make sure our engineering and marketing timelines are better synchronized going forward. Mike and Lisa I want you two to set up a bi-weekly sync to keep each other informed on dependencies.
+
+Mike (Engineering Lead): Absolutely. I should have flagged the API risk earlier. I will make sure to communicate blockers more proactively in the future.
+
+Lisa (Head of Marketing): That would be really helpful. Even a heads up a week earlier would have saved us a lot of money and effort.
+
+John (CEO): Okay let's move on to Q1 planning. Sarah can you walk us through the product roadmap?
+
+Sarah (Head of Product): Sure. For Q1 we have four major initiatives. First is the enterprise tier launch which is now scheduled for February 15th. Second is the mobile app which we are targeting a beta release by end of March. Third is the AI-powered analytics feature. And fourth is improving our core infrastructure to handle the scale we are projecting for H2.
+
+Mike (Engineering Lead): On the mobile app I want to flag that we currently do not have a mobile engineer on the team. I think we need a dedicated mobile hire to hit the March deadline.
+
+John (CEO): That is a good point. Rachel can you speak to the hiring plan?
+
+Rachel (Head of HR): Yes we currently have 8 open roles. The most critical ones are the senior mobile engineer, a data scientist, and two backend engineers. I am recommending we work with a specialized recruiting agency for the mobile role.
+
+John (CEO): Agreed. Let us approve the budget for a recruiting agency for the mobile engineer role. Rachel please get that set up by end of this week.
+
+Rachel (Head of HR): Will do. I also want to flag that our current offer acceptance rate has dropped from 78% to 61%. I think we need to revisit our compensation bands especially for senior engineering roles.
+
+John (CEO): That is concerning. Let us schedule a compensation review for next week. I want finance and HR in that meeting.
+
+Sarah (Head of Product): On the AI analytics feature I want to make sure we are aligned on scope. Given our timeline I think we should focus on just the churn modeling for Q1 and push the other two to Q2.
+
+Mike (Engineering Lead): That makes more sense. Doing all three in Q1 was always going to be a stretch.
+
+John (CEO): Agreed. Sarah please update the product spec and share it with the team by Thursday.
+
+Lisa (Head of Marketing): On the enterprise launch I want to start the campaign at least 4 weeks before the February 15th launch date. That means I need all the product materials by January 17th.
+
+Sarah (Head of Product): That is tight but doable. Mike can your team have the demo environment ready by January 10th?
+
+Mike (Engineering Lead): January 10th is doable. I will put David on that.
+
+John (CEO): Good. Let us also talk about our key metrics for Q1. I want us to hit $2M ARR by end of March, reduce churn from 8% to 5%, and get 10 enterprise customers signed up.
+
+Rachel (Head of HR): I also want to bring up employee morale. Our last engagement survey showed a dip from 7.8 to 6.9 out of 10. I am proposing we do a company wide town hall in January and also introduce quarterly career development conversations.
+
+John (CEO): That is important Rachel. Let us do the town hall on January 20th. Can you own that?
+
+Rachel (Head of HR): Yes absolutely. I will send out the invite this week.
+
+John (CEO): Perfect. Thanks everyone for a productive meeting. Let us make Q1 a great quarter. Talk soon.
+
+Sarah (Head of Product): One more thing. I want to propose we do a quarterly product review with the whole company not just leadership.
+
+John (CEO): Great idea Sarah. Rachel can you add that to the town hall agenda?
+
+Rachel (Head of HR): Yes I will add it.
