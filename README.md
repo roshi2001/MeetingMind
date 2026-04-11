@@ -188,4 +188,4 @@ MS Data Science — Northeastern University, Boston MA
 
 ## 📄 License
 
-MIT License — feel free to use and build on this project.
+MIT License — feel free to use and build on this project."# MeetingMind" 
