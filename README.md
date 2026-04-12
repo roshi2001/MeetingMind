@@ -52,20 +52,7 @@ Build a production-ready AI application that transforms raw meeting transcripts 
 | API Layer | FastAPI with Pydantic validation |
 | Frontend | Streamlit multi-page application |
 
----
 
-## 🛠️ Tech Stack
-
-- **LLM** — Groq API (llama-3.3-70b-versatile)
-- **Orchestration** — LangChain
-- **Vector Database** — FAISS
-- **Embeddings** — HuggingFace (sentence-transformers/all-MiniLM-L6-v2)
-- **Backend** — FastAPI
-- **Frontend** — Streamlit
-- **Experiment Tracking** — MLflow
-- **Language** — Python 3.11
-
----
 
 ## 📋 Features
 

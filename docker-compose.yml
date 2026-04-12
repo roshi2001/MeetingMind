@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    container_name: meetingmind-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./mlflow.db:/app/mlflow.db
+    restart: unless-stopped
+
+  frontend:
+    image: python:3.11-slim
+    container_name: meetingmind-frontend
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    command: >
+      sh -c "pip install streamlit requests plotly pandas reportlab &&
+             streamlit run frontend.py --server.address 0.0.0.0"
+    depends_on:
+      - api
+    restart: unless-stopped
