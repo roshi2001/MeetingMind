@@ -1,0 +1,42 @@
+name: Build and Deploy to Azure
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Login to Azure Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: meetingmindacr.azurecr.io
+        username: ${{ secrets.ACR_USERNAME }}
+        password: ${{ secrets.ACR_PASSWORD }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: true
+        tags: meetingmindacr.azurecr.io/meetingmind-api:latest
+
+    - name: Deploy to Azure Container Instance
+      uses: azure/aci-deploy@v1
+      with:
+        resource-group: meetingmind
+        dns-name-label: meetingmind-api
+        image: meetingmindacr.azurecr.io/meetingmind-api:latest
+        name: meetingmind-api
+        location: eastus
+        ports: 8000
+        environment-variables: GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}
+        registry-login-server: meetingmindacr.azurecr.io
+        registry-username: ${{ secrets.ACR_USERNAME }}
+        registry-password: ${{ secrets.ACR_PASSWORD }}
+        credentials: ${{ secrets.AZURE_CREDENTIALS }}
