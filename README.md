@@ -107,7 +107,10 @@ Open a new terminal and run:
 ```bash
 streamlit run frontend.py
 ```
-App will open at `http://localhost:8501`
+## 🌐 Deployed Version
+The app is live on Azure! No setup needed:
+- Frontend: http://meetingmind-frontend.eastus.azurecontainer.io:8501
+- API: http://meetingmind-api.eastus.azurecontainer.io:8000
 
 ---
 
