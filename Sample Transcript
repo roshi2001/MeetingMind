@@ -1,0 +1,133 @@
+MEETING TRANSCRIPT
+Project: Annual AI Platform Strategy & Q2/Q3 Roadmap Review
+Date: April 19, 2026
+Duration: 1 hour 15 minutes
+Attendees:
+  Rachel Kim - VP of Product
+  Daniel Osei - Engineering Director
+  Priya Nair - Senior Data Scientist
+  Marcus Webb - Design Lead
+  Aisha Torres - ML Platform Engineer
+  Tom Hartley - Head of Sales
+  Lena Müller - Compliance & Legal
+  James Park - DevOps Lead
+  Sofia Chen - Junior Product Manager
+  Raj Patel - Customer Success Manager
+
+---
+
+Rachel: Good morning everyone. Thanks for making time. We have a packed agenda today so let's move quickly. I want to cover four things: Q1 retrospective, Q2 priorities, the enterprise client feedback we got last week, and the compliance situation Lena flagged on Friday. Daniel, let's start with engineering. How did Q1 close out?
+
+Daniel: Overall Q1 was solid. We shipped the authentication overhaul, the new data ingestion layer, and the first version of the recommendation engine. The recommendation engine is running in staging but not production yet. We hit some stability issues in the last two weeks that slowed us down. Aisha, do you want to speak to that?
+
+Aisha: Sure. The main issue was that the model inference latency was spiking unpredictably under load. We traced it back to how we were batching requests. We've fixed the core issue but we want to run another week of load testing before we push to production. I'm confident we'll be green by April 28th.
+
+Rachel: Okay April 28th, noted. What's the risk if we slip past that?
+
+Daniel: If we slip past April 28th we start affecting the enterprise demo scheduled for May 8th. That's the hard deadline.
+
+Rachel: Understood. Aisha please flag immediately if anything looks uncertain. I'd rather know early than be surprised.
+
+Aisha: Absolutely, will do.
+
+Rachel: Priya, how's the data science side?
+
+Priya: So Q1 was a mixed bag honestly. The recommendation model is performing well in offline evaluation. We're seeing precision at K of about 0.73 which is above our target. But we ran into data quality issues with three of our enterprise data feeds. Two of them have been resolved but the third one, the retail client feed, is still inconsistent. We're working with their engineering team to fix it but it's on their side so the timeline is uncertain.
+
+Rachel: How uncertain?
+
+Priya: Could be one week, could be three. We don't have visibility into their internal processes. Raj, have you been in touch with them?
+
+Raj: Yes I spoke to their CTO last Thursday. They're aware of the issue and have assigned an engineer to it. He said he expected it to be resolved within two weeks but I wouldn't hold them to that.
+
+Rachel: Okay let's keep pressure on them. Raj can you schedule a check-in call with them twice a week until this is resolved?
+
+Raj: Yes, I'll set that up today.
+
+Rachel: Good. Marcus, design update?
+
+Marcus: Design had a strong Q1. We shipped the new dashboard UI, the onboarding redesign, and the first version of the admin panel. User testing feedback on the dashboard has been really positive. Average task completion time dropped by 34% compared to the old design which is a big win. For Q2 we're focused on the mobile experience and the bulk export flow if that gets prioritized.
+
+Rachel: That 34% improvement is great, well done. Sofia, anything to add from a product perspective on Q1?
+
+Sofia: Just that the new onboarding flow reduced time to first value from 11 days to 4 days on average based on the cohort data we pulled last week. That directly addresses the churn risk we identified in Q4. The customer success team has been really positive about it.
+
+Raj: That's definitely translating to renewals. We've had three clients mention the onboarding improvement specifically in the last two weeks.
+
+Rachel: Perfect. Okay let's move to Q2 priorities. Based on leadership input and the client feedback we've been collecting, I want to propose four focus areas for Q2. First, getting the recommendation engine to production. Second, the mobile experience. Third, starting work on the bulk export feature. And fourth, improving our model monitoring and observability. Daniel, does that order make sense from an engineering standpoint?
+
+Daniel: Recommendation engine to production is definitely first, that's non-negotiable. Mobile and bulk export are both significant efforts. I'd recommend we don't try to do both in full in Q2. We can start mobile in Q2 and do a limited version of bulk export, or we can do full mobile and push bulk export to Q3. I don't think we have the bandwidth to do both at full scope.
+
+Tom: I need to push back on that slightly. We've had four enterprise clients specifically ask about bulk export in the last month. Two of them said it's a blocker for their expansion. That's direct revenue impact.
+
+Daniel: I hear you Tom, and I'm not saying we ignore it. I'm saying we need to be realistic about what we can ship at quality. A rushed bulk export that breaks in production is worse than a delayed one.
+
+Rachel: Can we do a scoped version of bulk export? Like a CSV export for up to ten thousand rows, no complex formatting, just get something in their hands?
+
+Daniel: That's more realistic. Aisha, what's your estimate on a scoped version like that?
+
+Aisha: If we're talking basic CSV export with proper PII handling, I'd say three weeks of engineering work. Maybe four to be safe.
+
+Lena: Speaking of PII, this is actually what I wanted to flag. We got updated guidance from our legal counsel last week about data export compliance under the new state privacy regulations. Any bulk export feature needs to go through a compliance review before we ship. Depending on what data we're exporting and to which clients, we may need additional consent mechanisms or audit logging. I don't want to be an obstacle here but I also don't want us to ship something that creates legal exposure.
+
+Rachel: Lena, how long does a compliance review take?
+
+Lena: For a scoped feature like what Rachel described, probably two weeks if we can get the technical specs to me quickly.
+
+Rachel: Okay so if we start the compliance review in parallel with engineering, we could potentially ship the scoped bulk export by end of Q2. Daniel can you make sure Lena gets the technical specs by next Friday?
+
+Daniel: Yes, I'll make sure that happens.
+
+Rachel: Good. Lena thank you for flagging this early, much better than finding out after we ship.
+
+Lena: Of course, that's exactly what I'm here for.
+
+Rachel: Okay model monitoring. Priya, this was something you raised in the Q1 retro. Can you speak to why this is a Q2 priority?
+
+Priya: Right now our model monitoring is pretty basic. We have latency metrics and error rates but we don't have good visibility into model drift, data quality degradation, or prediction confidence over time. We had an incident in February where model performance degraded for about ten days before anyone noticed because we were looking at the wrong metrics. A proper monitoring system would have caught that in hours. It's a reliability and trust issue.
+
+Rachel: How much effort are we talking?
+
+Priya: Aisha and I have been discussing this. We think an eight week effort gets us to a solid baseline. Real-time drift detection, automated alerting, a monitoring dashboard, and integration with our existing incident response process.
+
+Aisha: We'd also want to set up shadow mode evaluation so we can test model updates against production traffic before fully deploying them. That would have prevented the February incident entirely.
+
+Rachel: Eight weeks takes us right to the end of Q2. Is that compatible with the recommendation engine work and the bulk export?
+
+Daniel: It's tight but doable if we're careful about resource allocation. Aisha is on both the recommendation engine and monitoring. We may need to think about whether we need additional headcount.
+
+Rachel: That's a conversation I need to have with leadership. I'll flag it this week. Let's tentatively put monitoring as a Q2 initiative and revisit scope if resources are constrained.
+
+James: Can I jump in on the DevOps side? The monitoring work Priya and Aisha are describing is going to require some infrastructure changes. We'll need to set up proper logging pipelines, probably integrate with our existing alerting stack, and potentially provision additional compute for the drift detection jobs. I'd want to be looped in early on the technical design so we don't hit surprises.
+
+Priya: Absolutely James, I'll schedule a technical design session with you and Aisha this week.
+
+James: Perfect, thanks.
+
+Rachel: Good, let's keep that moving. Tom, anything else from the sales side we need to factor into the roadmap?
+
+Tom: Two things. First, we have a prospect evaluating us against a competitor and their main differentiator is real-time recommendations. Right now we're batch. I know real-time is a big lift but I want to flag it as something we should at least have a perspective on for H2.
+
+Daniel: Real-time recommendations is a significant architectural change. It's not a Q2 or even Q3 conversation. But it's worth doing some technical scoping so we understand what it would actually take. I can have Aisha do a spike on it in Q2 — maybe two weeks of research and prototyping — so we can give you a proper answer.
+
+Tom: That would be really helpful, thank you.
+
+Tom: Second thing, the May 8th enterprise demo. I want to make sure we're aligned on what we're showing. We have three stakeholders coming from the client side including their CTO. I need to know exactly what will and won't be live by then.
+
+Rachel: Daniel, can you own putting together a demo readiness document by April 30th that outlines exactly what's live, what's in staging, and what we're demoing as work in progress?
+
+Daniel: Yes, I'll have that ready by April 30th.
+
+Rachel: Great. Raj, can you coordinate with Tom on the client-facing messaging for the demo?
+
+Raj: Yes, Tom and I can sync this week to align on that.
+
+Rachel: Perfect. Okay I think we've covered everything. Let me summarize the actions before we close. Aisha, load testing complete and recommendation engine green by April 28th. Raj, twice weekly check-ins with the retail client starting today. Daniel, technical specs for bulk export to Lena by next Friday. Priya and Aisha, technical design session with James this week on monitoring infrastructure. Aisha, two-week spike on real-time recommendations architecture in Q2. Daniel, demo readiness document by April 30th. Raj and Tom, sync this week on demo messaging. And I'll flag the headcount question to leadership this week.
+
+Daniel: One thing I want to add before we close. The team has been working really hard and Q1 was genuinely strong despite the challenges. I just want to make sure that's acknowledged.
+
+Rachel: Absolutely, well said Daniel. This team has done great work and it shows in the numbers Sofia shared. Let's carry that momentum into Q2. Thanks everyone, talk soon.
+
+---
+
+END OF TRANSCRIPT
